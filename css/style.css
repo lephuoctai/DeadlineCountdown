@@ -1,5 +1,5 @@
 /* Gaming Dark Mode CSS for Deadline Countdown */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
     --primary-color: #00f5ff;
@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Inter', 'SF Pro Display', 'Segoe UI', 'Roboto', sans-serif;
     background: var(--dark-bg);
     color: var(--text-primary);
     overflow-x: hidden;
@@ -100,7 +100,7 @@ body {
 }
 
 .title {
-    font-family: 'Orbitron', monospace;
+    font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
     font-size: clamp(2rem, 6vw, 4rem);
     font-weight: 900;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
@@ -119,7 +119,7 @@ body {
 }
 
 .subtitle {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', 'Consolas', monospace;
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--text-secondary);
@@ -197,7 +197,7 @@ body {
 }
 
 .status-text {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-weight: 700;
     color: var(--accent-color);
     font-size: 1.1rem;
@@ -232,7 +232,7 @@ body {
 }
 
 .time-value {
-    font-family: 'Orbitron', monospace;
+    font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
     color: var(--primary-color);
@@ -242,7 +242,7 @@ body {
 }
 
 .time-label {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-secondary);
@@ -267,7 +267,7 @@ body {
 }
 
 .separator {
-    font-family: 'Orbitron', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 3rem;
     font-weight: 900;
     color: var(--secondary-color);
@@ -325,7 +325,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-primary);
@@ -350,7 +350,7 @@ body {
 }
 
 .deadline-info h3 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -376,7 +376,7 @@ body {
 
 .stat-value {
     display: block;
-    font-family: 'Orbitron', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 2rem;
     font-weight: 900;
     color: var(--accent-color);
@@ -404,7 +404,7 @@ body {
     color: var(--text-primary);
     text-decoration: none;
     border-radius: 50px;
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.1rem;

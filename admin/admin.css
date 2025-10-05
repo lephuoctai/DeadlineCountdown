@@ -9,7 +9,7 @@
 }
 
 .admin-title {
-    font-family: 'Orbitron', monospace;
+    font-family: 'JetBrains Mono', 'Consolas', monospace;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
     background: linear-gradient(45deg, var(--secondary-color), var(--warning-color), var(--primary-color));
@@ -22,7 +22,7 @@
 }
 
 .admin-subtitle {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1rem;
     color: var(--text-secondary);
     letter-spacing: 0.3rem;
@@ -45,7 +45,7 @@
     border-radius: 50px;
     color: var(--text-secondary);
     text-decoration: none;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -94,7 +94,7 @@
 }
 
 .section-header h2 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -114,7 +114,7 @@
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 8px;
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
@@ -191,7 +191,7 @@
 }
 
 .card-header h3 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -201,7 +201,7 @@
 .status-badge {
     padding: 0.4rem 1rem;
     border-radius: 20px;
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -294,7 +294,7 @@
 }
 
 .form-header h3 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -346,7 +346,7 @@
     border: 1px solid var(--border-color);
     border-radius: 8px;
     color: var(--text-primary);
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1rem;
     transition: all 0.3s ease;
 }
@@ -403,7 +403,7 @@
 }
 
 .deadline-history h3 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -432,7 +432,7 @@
 .history-item h4 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
 }
 
 .history-item p {
@@ -463,7 +463,7 @@
 }
 
 .setting-card h3 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
@@ -534,7 +534,7 @@
     padding: 1rem 1.5rem;
     border-radius: 8px;
     color: var(--text-primary);
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     animation: toast-in 0.3s ease-out;
     max-width: 300px;
@@ -592,7 +592,7 @@
 }
 
 .modal-header h3 {
-    font-family: 'Orbitron', monospace;
+    font-family: 'Space Mono', monospace;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary-color);

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Deadline Countdown</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background">
+        <div class="circuit-overlay"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    
+    <div class="container">
+        <header class="admin-header">
+            <h1 class="admin-title">⚙️ ADMIN PANEL</h1>
+            <div class="admin-subtitle">DEADLINE MANAGEMENT SYSTEM</div>
+            <nav class="admin-nav">
+                <a href="../" class="nav-btn">🏠 HOME</a>
+                <a href="#" class="nav-btn active" id="deadlineTab">📅 DEADLINES</a>
+                <a href="#" class="nav-btn" id="settingsTab">⚙️ SETTINGS</a>
+            </nav>
+        </header>
+        
+        <!-- Deadline Management Section -->
+        <section class="admin-section" id="deadlineSection">
+            <div class="section-header">
+                <h2>📅 Deadline Management</h2>
+                <button class="create-btn" id="createNewBtn">+ NEW DEADLINE</button>
+            </div>
+            
+            <!-- Current Deadline Display -->
+            <div class="current-deadline-card" id="currentDeadlineCard">
+                <div class="card-header">
+                    <h3>Current Active Deadline</h3>
+                    <div class="status-badge active" id="currentStatus">ACTIVE</div>
+                </div>
+                <div class="deadline-info">
+                    <div class="info-row">
+                        <label>Challenge Name:</label>
+                        <span id="currentName">Loading...</span>
+                    </div>
+                    <div class="info-row">
+                        <label>Start Date:</label>
+                        <span id="currentStartDate">Loading...</span>
+                    </div>
+                    <div class="info-row">
+                        <label>End Date:</label>
+                        <span id="currentEndDate">Loading...</span>
+                    </div>
+                    <div class="info-row">
+                        <label>Description:</label>
+                        <span id="currentDescription">Loading...</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="edit-btn" id="editCurrentBtn">✏️ EDIT</button>
+                    <button class="delete-btn" id="deleteCurrentBtn">🗑️ DELETE</button>
+                </div>
+            </div>
+            
+            <!-- Deadline Form -->
+            <div class="deadline-form-container" id="deadlineForm" style="display: none;">
+                <div class="form-header">
+                    <h3 id="formTitle">Create New Deadline</h3>
+                    <button class="close-btn" id="closeFormBtn">✕</button>
+                </div>
+                <form id="deadlineFormElement">
+                    <div class="form-group">
+                        <label for="challengeName">Challenge Name *</label>
+                        <input type="text" id="challengeName" name="challengeName" required 
+                               placeholder="Programming Challenge 2025">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="challengeDescription">Description</label>
+                        <textarea id="challengeDescription" name="challengeDescription" 
+                                  placeholder="Describe your programming challenge..."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Start Date *</label>
+                            <input type="datetime-local" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endDate">End Date *</label>
+                            <input type="datetime-local" id="endDate" name="endDate" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="isActive" name="isActive" checked>
+                            <span class="checkmark"></span>
+                            Set as Active Deadline
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" id="cancelFormBtn">CANCEL</button>
+                        <button type="submit" class="save-btn" id="saveBtn">SAVE DEADLINE</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Deadline History -->
+            <div class="deadline-history">
+                <h3>📚 Deadline History</h3>
+                <div class="history-list" id="historyList">
+                    <div class="loading-spinner">Loading history...</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Settings Section -->
+        <section class="admin-section" id="settingsSection" style="display: none;">
+            <div class="section-header">
+                <h2>⚙️ System Settings</h2>
+            </div>
+            
+            <div class="settings-grid">
+                <div class="setting-card">
+                    <h3>🔥 Firebase Configuration</h3>
+                    <div class="firebase-status" id="firebaseStatus">
+                        <div class="status-indicator"></div>
+                        <span>Connection Status: <span id="connectionStatus">Checking...</span></span>
+                    </div>
+                    <button class="test-btn" id="testConnectionBtn">TEST CONNECTION</button>
+                </div>
+                
+                <div class="setting-card">
+                    <h3>🎨 Theme Settings</h3>
+                    <div class="theme-options">
+                        <label class="theme-option">
+                            <input type="radio" name="theme" value="gaming" checked>
+                            <span>Gaming Dark</span>
+                        </label>
+                        <label class="theme-option">
+                            <input type="radio" name="theme" value="minimal">
+                            <span>Minimal</span>
+                        </label>
+                        <label class="theme-option">
+                            <input type="radio" name="theme" value="neon">
+                            <span>Neon</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="setting-card">
+                    <h3>🔄 Auto Refresh</h3>
+                    <div class="refresh-settings">
+                        <label>
+                            Refresh Interval (seconds):
+                            <select id="refreshInterval">
+                                <option value="30">30 seconds</option>
+                                <option value="60" selected>1 minute</option>
+                                <option value="300">5 minutes</option>
+                                <option value="1800">30 minutes</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="setting-card">
+                    <h3>💾 Data Management</h3>
+                    <div class="data-actions">
+                        <button class="export-btn" id="exportDataBtn">📤 EXPORT DATA</button>
+                        <button class="import-btn" id="importDataBtn">📥 IMPORT DATA</button>
+                        <input type="file" id="importFile" accept=".json" style="display: none;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Success/Error Messages -->
+        <div class="toast-container" id="toastContainer"></div>
+    </div>
+    
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="confirmModal" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Confirm Action</h3>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Are you sure you want to proceed?</p>
+            </div>
+            <div class="modal-actions">
+                <button class="cancel-btn" id="modalCancelBtn">CANCEL</button>
+                <button class="confirm-btn" id="modalConfirmBtn">CONFIRM</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js';
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js';
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js';
+        
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyA6lRPc8F5ZDDM-YmoqwzoVanjh5vq0rhg",
+            authDomain: "gamerankboard.firebaseapp.com",
+            projectId: "gamerankboard",
+            storageBucket: "gamerankboard.firebasestorage.app",
+            messagingSenderId: "1068410694364",
+            appId: "1:1068410694364:web:5e27a263a4818aa3e32219",
+            measurementId: "G-LLXZPKHFGH"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getFirestore(app);
+        
+        window.firebaseApp = app;
+        window.db = db;
+        window.analytics = analytics;
+    </script>
+    <script src="admin.js"></script>
+</body>
+</html>
